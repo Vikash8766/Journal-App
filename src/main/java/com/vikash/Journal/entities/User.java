@@ -1,10 +1,7 @@
 package com.vikash.Journal.entities;
 
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -17,6 +14,8 @@ import java.util.List;
 @Document(collection = "users")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
 
 
@@ -28,6 +27,10 @@ public class User {
     private String username;
     @NonNull
     private String password;
+
+    private String email;
+
+    private boolean sentimentAnalysis;
 
     @DBRef
     private List<JournalEntry> journalEntries=new ArrayList<>();

@@ -28,6 +28,9 @@ public class JournalServices {
 
 
 
+
+
+
     public void saveEntry(JournalEntry myEntry, String username){
 
 
@@ -37,6 +40,7 @@ public class JournalServices {
 
             JournalEntry saved=journalRepository.save(myEntry);
 
+            myEntry.setDate(LocalDateTime.now());
 
             user.getJournalEntries().add(saved);
 

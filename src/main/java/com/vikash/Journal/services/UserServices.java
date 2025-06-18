@@ -33,6 +33,9 @@ public class UserServices {
 
             user.setRoles(Arrays.asList("USER"));
 
+
+
+
             userRepository.save(user);
 
             return true;
